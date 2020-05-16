@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,12 +9,6 @@ import java.awt.Font;
 public class JFrame_Teacher extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					JFrame_Teacher frame = new JFrame_Teacher();
@@ -24,9 +17,7 @@ public class JFrame_Teacher extends JFrame {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
-
+	
 	/**
 	 * Create the frame.
 	 */

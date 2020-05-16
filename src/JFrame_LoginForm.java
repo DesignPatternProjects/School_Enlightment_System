@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,19 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.awt.event.ActionEvent;
-import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import java.awt.Color;
-import java.awt.Window.Type;
 import javax.swing.JPasswordField;
 
 public class JFrame_LoginForm extends JFrame {
@@ -31,6 +26,7 @@ public class JFrame_LoginForm extends JFrame {
 	private JComboBox<String> LoginAs_comboBox;
 	private JLabel lblNewLabel;
 	private JPasswordField password_textField;
+	private JButton Register_button;
 
 	/**
 	 * Launch the application.
@@ -40,7 +36,8 @@ public class JFrame_LoginForm extends JFrame {
 			public void run() {
 				try {
 					JFrame_LoginForm frame = new JFrame_LoginForm();
-					frame.setVisible(true);
+					frame.setVisible(true); 
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -63,6 +60,32 @@ public class JFrame_LoginForm extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton Cancel_button = new JButton("CANCEL");
+		Cancel_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		
+		Register_button = new JButton("REGISTER HERE");
+		Register_button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame_RegistrationForm frame = new JFrame_RegistrationForm();
+				frame.setVisible(true);
+				
+			}
+		});
+		Register_button.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		Register_button.setForeground(new Color(0, 0, 255));
+		Register_button.setBounds(210, 331, 170, 33);
+		contentPane.add(Register_button);
+		Cancel_button.setActionCommand("");
+		Cancel_button.setToolTipText("");
+		Cancel_button.setForeground(new Color(0, 0, 255));
+		Cancel_button.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		Cancel_button.setBounds(314, 263, 115, 33);
+		contentPane.add(Cancel_button);
 		
 		JLabel Username_label = new JLabel("USERNAME");
 		Username_label.setForeground(new Color(0, 0, 255));
@@ -92,12 +115,13 @@ public class JFrame_LoginForm extends JFrame {
 		JButton Login_Button = new JButton("LOGIN");
 		Login_Button.setForeground(new Color(0, 0, 255));
 		Login_Button.setDefaultCapable(true);
-		Login_Button.setBounds(216, 263, 115, 32);
+		Login_Button.setBounds(159, 263, 115, 32);
 		Login_Button.setActionCommand("");
 		Login_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				String username_input=username_textField.getText();
+				@SuppressWarnings("deprecation")
 				String password_input=password_textField.getText();
 				String role_input=LoginAs_comboBox.getSelectedItem().toString();
 				if(username_input.equals("") || password_input.equals("") || role_input.equals("SELECT")) {
@@ -107,7 +131,7 @@ public class JFrame_LoginForm extends JFrame {
 				try {
 					
 					Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/client", "root", "");
-					PreparedStatement pst = (PreparedStatement) con.prepareStatement("Select USER_ID, password, LOGIN_AS from user_data where user_ID=? and password=? and login_as=?");
+					PreparedStatement pst = (PreparedStatement) con.prepareStatement("Select USER_NAME, password, LOGIN_AS from user_data where user_name=? and password=? and login_as=?");
 
 					pst.setString(1, username_input);
 					pst.setString(2, password_input);
@@ -117,17 +141,19 @@ public class JFrame_LoginForm extends JFrame {
 					ResultSet rs=pst.executeQuery();
 					
 					if(rs.next()) {
-						String username=rs.getString("user_id");
+						String username=rs.getString("user_name");
 						String login_role=rs.getString("login_as");
 						JOptionPane.showMessageDialog(Login_Button, "Login Successfull..");
 						if(role_input.equalsIgnoreCase("TEACHER") && login_role.equalsIgnoreCase("teacher")) {
-							JFrame_Teacher teach=new JFrame_Teacher(username);
-							teach.setVisible(true);
+							JFrame_Teacher teacher=new JFrame_Teacher(username);
+							teacher.run();
+							teacher.setVisible(true);
 							setVisible(false);
 						}
 						if(role_input.equalsIgnoreCase("STUDENT") && login_role.equalsIgnoreCase("student")){
-							JFrame_Student teach=new JFrame_Student(username);
-							teach.setVisible(true);
+							JFrame_Student student=new JFrame_Student(username);
+							student.run();
+							student.setVisible(true);
 							setVisible(false);
 						}
 					}
@@ -156,7 +182,7 @@ public class JFrame_LoginForm extends JFrame {
 		LoginAs_comboBox = new JComboBox<String>();
 		LoginAs_comboBox.setForeground(new Color(0, 0, 255));
 		LoginAs_comboBox.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-		LoginAs_comboBox.setModel(new DefaultComboBoxModel(new String[] {"SELECT", "TEACHER", "STUDENT"}));
+		LoginAs_comboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"SELECT", "TEACHER", "STUDENT"}));
 		LoginAs_comboBox.setSelectedIndex(0);
 		LoginAs_comboBox.setBounds(314, 195, 115, 32);
 		contentPane.add(LoginAs_comboBox);
