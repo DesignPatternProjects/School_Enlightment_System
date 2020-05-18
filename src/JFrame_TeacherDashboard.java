@@ -1,3 +1,4 @@
+package src;
 import javafx.scene.paint.Color;
 import javax.swing.JPanel;
 

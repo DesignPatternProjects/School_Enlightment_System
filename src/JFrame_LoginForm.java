@@ -1,5 +1,5 @@
+package src;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -20,6 +20,13 @@ import javax.swing.JPasswordField;
 
 public class JFrame_LoginForm extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7362423879142414799L;
+	/**
+	 * 
+	 */
 	private JPanel contentPane;
 	private JTextField username_textField;
 	private JLabel Loginas_label;

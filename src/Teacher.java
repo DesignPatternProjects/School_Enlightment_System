@@ -1,4 +1,4 @@
-
+package src;
 import java.util.Objects;
 
 public class Teacher {
