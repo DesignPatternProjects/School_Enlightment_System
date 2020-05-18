@@ -145,7 +145,7 @@ public class JFrame_LoginForm extends JFrame {
 						String login_role=rs.getString("login_as");
 						JOptionPane.showMessageDialog(Login_Button, "Login Successfull..");
 						if(role_input.equalsIgnoreCase("TEACHER") && login_role.equalsIgnoreCase("teacher")) {
-							JFrame_Teacher teacher=new JFrame_Teacher(username);
+							JFrame_TeacherDashboard teacher= new JFrame_TeacherDashboard(username);
 							teacher.run();
 							teacher.setVisible(true);
 							setVisible(false);
