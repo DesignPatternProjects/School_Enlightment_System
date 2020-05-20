@@ -264,7 +264,11 @@ public class JFrame_RegistrationForm extends JFrame {
 		contentPane.add(loginas_textField);
 		
 		JLabel backgroung_label = new JLabel("");
+<<<<<<< HEAD
 		backgroung_label.setIcon(new ImageIcon("Images\\elearning2 (1).jpg"));
+=======
+		backgroung_label.setIcon(new ImageIcon("\\Images\\elearning2 (1).jpg"));
+>>>>>>> cb62ae397ff3c891302c84682ca8b1d0952222ad
 		backgroung_label.setBounds(0, -17, 522, 714);
 		contentPane.add(backgroung_label);
 		

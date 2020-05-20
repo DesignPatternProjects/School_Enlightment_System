@@ -1,6 +1,8 @@
 package src;
 import javafx.scene.paint.Color;
 import javax.swing.JPanel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -9,9 +11,7 @@ import javax.swing.JPanel;
 public class JFrame_TeacherDashboard extends javax.swing.JFrame {
 	
 	private String username;
-    /**
-     * Creates new form Home
-     */
+   
     public JFrame_TeacherDashboard(String username) {
         this.username=username;
     	initComponents();
@@ -49,6 +49,15 @@ public class JFrame_TeacherDashboard extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel2.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent arg0) {
+        		JFrame_UpdateProfile updateprofile= new JFrame_UpdateProfile(username);
+        		//updateprofile.run();
+        		updateprofile.setVisible(true);
+				//setVisible(false);
+        	}
+        });
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -115,10 +124,10 @@ public class JFrame_TeacherDashboard extends javax.swing.JFrame {
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 334, 25));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 348, -1));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("\\Images\\navigation.png")); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon("Images\\navigation.png")); // NOI18N
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 90, 100));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("\\Images\\search_20px_1.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon("Images\\search_20px_1.png")); // NOI18N
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 240));
@@ -170,9 +179,7 @@ public class JFrame_TeacherDashboard extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jPanel4MouseExited(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel4MousePressed(evt);
-            }
+            
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -212,9 +219,7 @@ public class JFrame_TeacherDashboard extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jPanel5MouseExited(evt);
             }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel5MousePressed(evt);
-            }
+           
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -394,7 +399,6 @@ public class JFrame_TeacherDashboard extends javax.swing.JFrame {
      
     
     
-    
     int xx,xy;
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         // TODO add your handling code here:
@@ -460,16 +464,7 @@ public class JFrame_TeacherDashboard extends javax.swing.JFrame {
         resetColor(jPanel3);
     }//GEN-LAST:event_jPanel3MouseExited
 
-    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
-        // TODO add your handling code here:
-       // new Home_Data().show();
-    }//GEN-LAST:event_jPanel4MousePressed
-
-    private void jPanel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MousePressed
-        // TODO add your handling code here:
-        //just a sample.
-     //   new Students().show();
-    }//GEN-LAST:event_jPanel5MousePressed
+  
  public void setColor(JPanel panel)
  {
      panel.setBackground(new java.awt.Color(197, 197, 197));
