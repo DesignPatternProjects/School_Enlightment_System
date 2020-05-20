@@ -147,13 +147,13 @@ public class JFrame_LoginForm extends JFrame {
 						JOptionPane.showMessageDialog(Login_Button, "Login Successfull..");
 						if(role_input.equalsIgnoreCase("TEACHER") && login_role.equalsIgnoreCase("teacher")) {
 							JFrame_TeacherDashboard teacher= new JFrame_TeacherDashboard(username);
-							teacher.run();
+							//teacher.run();
 							teacher.setVisible(true);
 							setVisible(false);
 						}
 						if(role_input.equalsIgnoreCase("STUDENT") && login_role.equalsIgnoreCase("student")){
-							JFrame_Student student=new JFrame_Student(username);
-							student.run();
+							JFrame_StudentDashboard student=new JFrame_StudentDashboard(username);
+							//student.run();
 							student.setVisible(true);
 							setVisible(false);
 						}

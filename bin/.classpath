@@ -4,5 +4,14 @@
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/mysql-connector-java-8.0.20.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/jcalendar-1.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_251"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/jconsole.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/ant-javafx.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/dt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/javafx-mx.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/jgoodies-common-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/jgoodies-forms-1.8.0-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
