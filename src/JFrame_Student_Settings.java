@@ -18,14 +18,14 @@ import java.awt.Dimension;
 import javax.swing.JMenuItem;
 import java.awt.Component;
 
-public class JFrame_Student_Home_Settings extends JFrame {
+public class JFrame_Student_Settings extends JFrame {
 
 	private JPanel contentPane;
 	private String username;
 
 	
 
-public JFrame_Student_Home_Settings(String username) {
+public JFrame_Student_Settings(String username) {
 	setTitle("Settings");
 	this.username=username;
    	initComponents();

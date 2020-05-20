@@ -66,7 +66,6 @@ public void initComponents() {
 		        notifications_jPanel = new javax.swing.JPanel();
 		        notifications_jLabel_img = new javax.swing.JLabel();
 		        notifications_jLabel_img.setIcon(new ImageIcon("Images\\icons8-notification-96.png"));
-		        jLabel1 = new javax.swing.JLabel();
 		        home_jPanel = new javax.swing.JPanel();
 		        home_jPanel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 		        home_jPanel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
@@ -78,24 +77,19 @@ public void initComponents() {
 		        	}
 		        });
 		        profile_jlabel_img.setIcon(new ImageIcon("Images\\icons8-profile-96.png"));
-		        jLabel4 = new javax.swing.JLabel();
 		        course_jPanel5 = new javax.swing.JPanel();
 		        courses_jLabel_img = new javax.swing.JLabel();
 		        courses_jLabel_img.setIcon(new ImageIcon("Images\\icons8-books-96.png"));
-		        jLabel6 = new javax.swing.JLabel();
 		        grades_jPanel = new javax.swing.JPanel();
 		        grades_jLabel_img = new javax.swing.JLabel();
 		        grades_jLabel_img.setIcon(new ImageIcon("Images\\icons8-grades-96.png"));
-		        jLabel8 = new javax.swing.JLabel();
 		        settings_jPanel = new javax.swing.JPanel();
 		        settings_jPanel.setForeground(new Color(0, 0, 0));
 		        settings_jLabel_img = new javax.swing.JLabel();
 		        settings_jLabel_img.setIcon(new ImageIcon("Images\\icons8-briefcase-settings-96.png"));
-		        jLabel10 = new javax.swing.JLabel();
 		        Finacial_accnt_jPanel = new javax.swing.JPanel();
 		        financial_accnt_jLabel_img = new javax.swing.JLabel();
 		        financial_accnt_jLabel_img.setIcon(new ImageIcon("Images\\icons8-financial-tasks-96.png"));
-		        jLabel12 = new javax.swing.JLabel();
 
 		        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		        setLocationByPlatform(true);
@@ -146,10 +140,10 @@ public void initComponents() {
 		        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 334, 25));
 		        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 348, -1));
 
-		        jLabel14.setIcon(new javax.swing.ImageIcon("\\Images\\navigation.png")); // NOI18N
+		        jLabel14.setIcon(new javax.swing.ImageIcon("Images\\navigation.png")); // NOI18N
 		        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 90, 100));
 
-		        jLabel16.setIcon(new javax.swing.ImageIcon("\\Images\\search_20px_1.png")); // NOI18N
+		        jLabel16.setIcon(new javax.swing.ImageIcon("Images\\search_20px_1.png")); // NOI18N
 		        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
 
 		        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 240));
@@ -162,13 +156,14 @@ public void initComponents() {
 		            public void mouseExited(java.awt.event.MouseEvent evt) {
 		                jPanel3MouseExited(evt);
 		            }
+		        	@Override
+		        	public void mouseClicked(java.awt.event.MouseEvent evt) {
+		        		jPanel3MouseClicked(evt);
+		        	}
 		        });
 
 		        notifications_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        notifications_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
-		        notifications_jLabel_img.setText("Update");
-
-		        jLabel1.setIcon(new javax.swing.ImageIcon("Images\\download_52px.png")); // NOI18N
 		        
 		        notifications_jlabel = new JLabel("Notifications");
 		        notifications_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
@@ -177,24 +172,17 @@ public void initComponents() {
 		        gl_notifications_jPanel.setHorizontalGroup(
 		        	gl_notifications_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_notifications_jPanel.createSequentialGroup()
-		        			.addGroup(gl_notifications_jPanel.createParallelGroup(Alignment.LEADING)
-		        				.addGroup(gl_notifications_jPanel.createSequentialGroup()
-		        					.addGap(46)
-		        					.addComponent(jLabel1))
-		        				.addGroup(gl_notifications_jPanel.createSequentialGroup()
-		        					.addGap(19)
-		        					.addGroup(gl_notifications_jPanel.createParallelGroup(Alignment.TRAILING)
-		        						.addComponent(notifications_jLabel_img, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-		        						.addComponent(notifications_jlabel))))
+		        			.addGap(19)
+		        			.addGroup(gl_notifications_jPanel.createParallelGroup(Alignment.TRAILING)
+		        				.addComponent(notifications_jLabel_img, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+		        				.addComponent(notifications_jlabel))
 		        			.addContainerGap(19, Short.MAX_VALUE))
 		        );
 		        gl_notifications_jPanel.setVerticalGroup(
 		        	gl_notifications_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_notifications_jPanel.createSequentialGroup()
 		        			.addComponent(notifications_jlabel)
-		        			.addGap(6)
-		        			.addComponent(jLabel1)
-		        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+		        			.addPreferredGap(ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
 		        			.addComponent(notifications_jLabel_img, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
 		        			.addGap(8))
 		        );
@@ -220,8 +208,6 @@ public void initComponents() {
 
 		        profile_jlabel_img.setFont(new Font("Comic Sans MS", Font.BOLD, 16)); // NOI18N
 		        profile_jlabel_img.setForeground(new java.awt.Color(45, 118, 232));
-
-		        jLabel4.setIcon(new javax.swing.ImageIcon("Images\\home_48px.png")); // NOI18N
 		        
 		        JLabel profile_jlabel = new JLabel("Profile");
 		        profile_jlabel.setForeground(new Color(0, 0, 0));
@@ -229,26 +215,20 @@ public void initComponents() {
 
 		        javax.swing.GroupLayout gl_home_jPanel = new javax.swing.GroupLayout(home_jPanel);
 		        gl_home_jPanel.setHorizontalGroup(
-		        	gl_home_jPanel.createParallelGroup(Alignment.TRAILING)
+		        	gl_home_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_home_jPanel.createSequentialGroup()
-		        			.addGap(140)
-		        			.addComponent(jLabel4)
-		        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-		        		.addGroup(Alignment.LEADING, gl_home_jPanel.createSequentialGroup()
 		        			.addGap(32)
 		        			.addGroup(gl_home_jPanel.createParallelGroup(Alignment.LEADING)
 		        				.addComponent(profile_jlabel_img)
 		        				.addComponent(profile_jlabel))
-		        			.addContainerGap(15, Short.MAX_VALUE))
+		        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		        );
 		        gl_home_jPanel.setVerticalGroup(
 		        	gl_home_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_home_jPanel.createSequentialGroup()
 		        			.addComponent(profile_jlabel)
 		        			.addGap(6)
-		        			.addGroup(gl_home_jPanel.createParallelGroup(Alignment.LEADING)
-		        				.addComponent(jLabel4)
-		        				.addComponent(profile_jlabel_img, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
+		        			.addComponent(profile_jlabel_img, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
 		        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		        );
 		        home_jPanel.setLayout(gl_home_jPanel);
@@ -266,12 +246,14 @@ public void initComponents() {
 		            public void mousePressed(java.awt.event.MouseEvent evt) {
 		                jPanel5MousePressed(evt);
 		            }
+		        	@Override
+		        	public void mouseClicked(java.awt.event.MouseEvent evt) {
+		        		 jPanel5MouseClicked(evt);
+		        	}
 		        });
 
 		        courses_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        courses_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
-
-		        jLabel6.setIcon(new javax.swing.ImageIcon("Images\\group_52px.png")); // NOI18N
 		        
 		        courses_jlabel = new JLabel("Courses");
 		        courses_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
@@ -281,9 +263,6 @@ public void initComponents() {
 		        	gl_course_jPanel5.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_course_jPanel5.createSequentialGroup()
 		        			.addGroup(gl_course_jPanel5.createParallelGroup(Alignment.LEADING)
-		        				.addGroup(gl_course_jPanel5.createSequentialGroup()
-		        					.addGap(131)
-		        					.addComponent(jLabel6))
 		        				.addGroup(gl_course_jPanel5.createSequentialGroup()
 		        					.addGap(42)
 		        					.addComponent(courses_jlabel))
@@ -297,9 +276,7 @@ public void initComponents() {
 		        		.addGroup(gl_course_jPanel5.createSequentialGroup()
 		        			.addComponent(courses_jlabel)
 		        			.addGap(6)
-		        			.addGroup(gl_course_jPanel5.createParallelGroup(Alignment.LEADING)
-		        				.addComponent(jLabel6)
-		        				.addComponent(courses_jLabel_img, GroupLayout.PREFERRED_SIZE, 81, Short.MAX_VALUE))
+		        			.addComponent(courses_jLabel_img, GroupLayout.PREFERRED_SIZE, 81, Short.MAX_VALUE)
 		        			.addContainerGap())
 		        );
 		        course_jPanel5.setLayout(gl_course_jPanel5);
@@ -314,12 +291,14 @@ public void initComponents() {
 		            public void mouseExited(java.awt.event.MouseEvent evt) {
 		                jPanel6MouseExited(evt);
 		            }
+		        	@Override
+		        	public void mouseClicked(java.awt.event.MouseEvent evt) {
+		        		jPanel6MouseClicked(evt);
+		        	}
 		        });
 
 		        grades_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        grades_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
-
-		        jLabel8.setIcon(new javax.swing.ImageIcon("Images\\classroom_48px.png")); // NOI18N
 		        
 		        grades_jlabel = new JLabel("Grades");
 		        grades_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
@@ -330,23 +309,18 @@ public void initComponents() {
 		        		.addGroup(gl_grades_jPanel.createSequentialGroup()
 		        			.addGroup(gl_grades_jPanel.createParallelGroup(Alignment.LEADING)
 		        				.addGroup(gl_grades_jPanel.createSequentialGroup()
-		        					.addGap(46)
-		        					.addComponent(jLabel8))
-		        				.addGroup(gl_grades_jPanel.createSequentialGroup()
 		        					.addGap(38)
 		        					.addComponent(grades_jlabel))
 		        				.addGroup(gl_grades_jPanel.createSequentialGroup()
 		        					.addGap(23)
 		        					.addComponent(grades_jLabel_img)))
-		        			.addContainerGap(21, Short.MAX_VALUE))
+		        			.addContainerGap(48, Short.MAX_VALUE))
 		        );
 		        gl_grades_jPanel.setVerticalGroup(
 		        	gl_grades_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_grades_jPanel.createSequentialGroup()
 		        			.addComponent(grades_jlabel)
-		        			.addGap(6)
-		        			.addComponent(jLabel8)
-		        			.addPreferredGap(ComponentPlacement.RELATED)
+		        			.addGap(13)
 		        			.addComponent(grades_jLabel_img, GroupLayout.PREFERRED_SIZE, 84, Short.MAX_VALUE))
 		        );
 		        grades_jPanel.setLayout(gl_grades_jPanel);
@@ -369,8 +343,6 @@ public void initComponents() {
 
 		        settings_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        settings_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
-
-		        jLabel10.setIcon(new javax.swing.ImageIcon("Images\\settings_48px.png")); // NOI18N
 		        
 		        settings_jlabel = new JLabel("Settings");
 		        settings_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
@@ -379,28 +351,21 @@ public void initComponents() {
 		        gl_settings_jPanel.setHorizontalGroup(
 		        	gl_settings_jPanel.createParallelGroup(Alignment.TRAILING)
 		        		.addGroup(gl_settings_jPanel.createSequentialGroup()
-		        			.addContainerGap(17, Short.MAX_VALUE)
-		        			.addGroup(gl_settings_jPanel.createParallelGroup(Alignment.LEADING)
+		        			.addContainerGap(34, Short.MAX_VALUE)
+		        			.addGroup(gl_settings_jPanel.createParallelGroup(Alignment.TRAILING)
 		        				.addGroup(gl_settings_jPanel.createSequentialGroup()
-		        					.addComponent(jLabel10)
-		        					.addPreferredGap(ComponentPlacement.RELATED)
 		        					.addComponent(settings_jLabel_img)
 		        					.addGap(20))
-		        				.addGroup(Alignment.TRAILING, gl_settings_jPanel.createSequentialGroup()
+		        				.addGroup(gl_settings_jPanel.createSequentialGroup()
 		        					.addComponent(settings_jlabel)
 		        					.addGap(41))))
 		        );
 		        gl_settings_jPanel.setVerticalGroup(
 		        	gl_settings_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_settings_jPanel.createSequentialGroup()
-		        			.addGroup(gl_settings_jPanel.createParallelGroup(Alignment.LEADING)
-		        				.addGroup(gl_settings_jPanel.createSequentialGroup()
-		        					.addGap(85)
-		        					.addComponent(jLabel10))
-		        				.addGroup(Alignment.TRAILING, gl_settings_jPanel.createSequentialGroup()
-		        					.addComponent(settings_jlabel)
-		        					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-		        					.addComponent(settings_jLabel_img, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)))
+		        			.addComponent(settings_jlabel)
+		        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+		        			.addComponent(settings_jLabel_img, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
 		        			.addContainerGap())
 		        );
 		        settings_jPanel.setLayout(gl_settings_jPanel);
@@ -415,13 +380,14 @@ public void initComponents() {
 		            public void mouseExited(java.awt.event.MouseEvent evt) {
 		                jPanel8MouseExited(evt);
 		            }
+		        	@Override
+		        	public void mouseClicked(java.awt.event.MouseEvent evt) {
+		        		jPanel8MouseClicked(evt);
+		        	}
 		        });
 
 		        financial_accnt_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        financial_accnt_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
-		        financial_accnt_jLabel_img.setText("Classes");
-
-		        jLabel12.setIcon(new javax.swing.ImageIcon("Images\\list_64px.png")); // NOI18N
 		        
 		        financial_account_jlabel = new JLabel("Financial Account");
 		        financial_account_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
@@ -429,10 +395,6 @@ public void initComponents() {
 		        javax.swing.GroupLayout gl_Finacial_accnt_jPanel = new javax.swing.GroupLayout(Finacial_accnt_jPanel);
 		        gl_Finacial_accnt_jPanel.setHorizontalGroup(
 		        	gl_Finacial_accnt_jPanel.createParallelGroup(Alignment.TRAILING)
-		        		.addGroup(gl_Finacial_accnt_jPanel.createSequentialGroup()
-		        			.addGap(38)
-		        			.addComponent(jLabel12)
-		        			.addContainerGap(102, Short.MAX_VALUE))
 		        		.addGroup(gl_Finacial_accnt_jPanel.createSequentialGroup()
 		        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 		        			.addGroup(gl_Finacial_accnt_jPanel.createParallelGroup(Alignment.LEADING)
@@ -446,9 +408,7 @@ public void initComponents() {
 		        	gl_Finacial_accnt_jPanel.createParallelGroup(Alignment.TRAILING)
 		        		.addGroup(gl_Finacial_accnt_jPanel.createSequentialGroup()
 		        			.addComponent(financial_account_jlabel)
-		        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-		        			.addComponent(jLabel12)
-		        			.addPreferredGap(ComponentPlacement.RELATED)
+		        			.addPreferredGap(ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
 		        			.addComponent(financial_accnt_jLabel_img, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
 		        			.addGap(39))
 		        );
@@ -548,44 +508,58 @@ public void initComponents() {
 		        setColor(notifications_jPanel);
 		    }//GEN-LAST:event_jPanel3MouseEntered
 
-		    private void jPanel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseExited
+		    private void jPanel3MouseExited(java.awt.event.MouseEvent evt) {
 		        // TODO add your handling code here:
 		        resetColor(notifications_jPanel);
-		    }//GEN-LAST:event_jPanel3MouseExited
+		    }
 
-		    /*private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
-		        // TODO add your handling code here:
-		    	JFrame_Student_Profile student_profile=new JFrame_Student_Profile(username);
+		    private void jPanel5MousePressed(java.awt.event.MouseEvent evt) {
+		        		     //   new Students().show();
+		    }
+
+		    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {
+		       JFrame_Student_Notification notification=new JFrame_Student_Notification(username);
+		    	notification.setVisible(true);
+				 //new user_data().show();
+		   }
+		    
+		    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {
+		       	JFrame_Student_Profile student_profile=new JFrame_Student_Profile(username);
 		    	student_profile.showData(username);
 		    	student_profile.setVisible(true);
-				setVisible(false);
+				
 		        //new user_data().show();
-		   }//GEN-LAST:event_jPanel4MousePressed*/
-		    
-		    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
+		   }
+		    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
 		        // TODO add your handling code here:
-		    	JFrame_Student_Profile student_profile=new JFrame_Student_Profile(username);
-		    	student_profile.showData(username);
-		    	student_profile.setVisible(true);
-				//setVisible(false);
-		        //new user_data().show();
-		   }//GEN-LAST:event_jPanel4MousePressed
-		    
-		    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
+		    	JFrame_Student_Courses courses = new JFrame_Student_Courses(username);
+		    	courses.setVisible(true);
+		    	//new user_data().show();
+		   }
+		   
+		   private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
 		        // TODO add your handling code here:
-		    	JFrame_Student_Home_Settings settings = new JFrame_Student_Home_Settings(username);
+		    	JFrame_Student_Grades courses = new JFrame_Student_Grades(username);
+		    	courses.setVisible(true);
+		    	 //new user_data().show();
+		   }
+		   
+		   private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {
+		        // TODO add your handling code here:
+		    	JFrame_Student_Settings settings = new JFrame_Student_Settings(username);
 				settings.setVisible(true);
-		    	//student_profile.showData(username);
-		    	//student_profile.setVisible(true);
-				//setVisible(false);
-		        //new user_data().show();
-		   }//GEN-LAST:event_jPanel4MousePressed
-
-		    private void jPanel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MousePressed
+		    	
+		   }
+		   private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {
 		        // TODO add your handling code here:
-		        //just a sample.
-		     //   new Students().show();
-		    }//GEN-LAST:event_jPanel5MousePressed
+		    	JFrame_Student_Finance_Account settings = new JFrame_Student_Finance_Account(username);
+				settings.setVisible(true);
+		    	
+		   }
+		    
+
+		    
+		    
 		 public void setColor(JPanel panel)
 		 {
 		     panel.setBackground(new java.awt.Color(197, 197, 197));
@@ -598,21 +572,15 @@ public void initComponents() {
 
 		    // Variables declaration - do not modify//GEN-BEGIN:variables
 		    private javax.swing.JLabel exit;
-		    private javax.swing.JLabel jLabel1;
-		    private javax.swing.JLabel jLabel10;
 		    private javax.swing.JLabel financial_accnt_jLabel_img;
-		    private javax.swing.JLabel jLabel12;
 		    private javax.swing.JLabel jLabel13;
 		    private javax.swing.JLabel jLabel14;
 		    private javax.swing.JLabel jLabel15;
 		    private javax.swing.JLabel jLabel16;
 		    private javax.swing.JLabel notifications_jLabel_img;
 		    private javax.swing.JLabel profile_jlabel_img;
-		    private javax.swing.JLabel jLabel4;
 		    private javax.swing.JLabel courses_jLabel_img;
-		    private javax.swing.JLabel jLabel6;
 		    private javax.swing.JLabel grades_jLabel_img;
-		    private javax.swing.JLabel jLabel8;
 		    private javax.swing.JLabel settings_jLabel_img;
 		    private javax.swing.JPanel jPanel1;
 		    private javax.swing.JPanel jPanel2;
