@@ -1,4 +1,8 @@
 package src;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 695681938b1dc2980a0fe65aee2ab1e1e57adcbb
 import java.util.Locale;
 
 /**
