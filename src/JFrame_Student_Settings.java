@@ -75,6 +75,8 @@ public void initComponents() {
 	btnNewButton.setForeground(new Color(0, 0, 255));
 	btnNewButton.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
+			ChangePassword pwd=new ChangePassword(username);
+			pwd.setVisible(true);
 		}
 	});
 	btnNewButton.setBounds(46, 38, 170, 35);
