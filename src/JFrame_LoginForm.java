@@ -58,7 +58,6 @@ public class JFrame_LoginForm extends JFrame {
 	public JFrame_LoginForm() {
 		setType(Type.POPUP);
 		setTitle("LOGIN_WINDOW\r\n");
-		setResizable(false);
 		setBackground(new Color(240, 240, 240));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 566, 456);
@@ -78,11 +77,16 @@ public class JFrame_LoginForm extends JFrame {
 		Register_button = new JButton("REGISTER HERE");
 		Register_button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFrame_RegistrationForm frame = new JFrame_RegistrationForm();
-				frame.setVisible(true);
+				JFrame_RegistrationForm register_frame = new JFrame_RegistrationForm();
+				register_frame.registerData();
+				register_frame.setVisible(true);
 				
 			}
 		});
+		
+		password_textField = new JPasswordField();
+		password_textField.setBounds(314, 130, 115, 32);
+		contentPane.add(password_textField);
 		Register_button.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 		Register_button.setForeground(new Color(0, 0, 255));
 		Register_button.setBounds(210, 331, 170, 33);
@@ -109,6 +113,7 @@ public class JFrame_LoginForm extends JFrame {
 		contentPane.add(Username_label);
 		
 		JLabel Passwword_label = new JLabel("PASSWORD");
+		Passwword_label.setBackground(new Color(255, 255, 255));
 		Passwword_label.setForeground(new Color(0, 0, 255));
 		Passwword_label.setBounds(159, 130, 115, 32);
 		Passwword_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
@@ -180,7 +185,7 @@ public class JFrame_LoginForm extends JFrame {
 		Login_Button.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 		contentPane.add(Login_Button);
 		
-		Loginas_label = new JLabel("LOGINAS");
+		Loginas_label = new JLabel("LOGIN_AS");
 		Loginas_label.setForeground(new Color(0, 0, 255));
 		Loginas_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 		Loginas_label.setBounds(159, 195, 110, 32);
@@ -196,12 +201,8 @@ public class JFrame_LoginForm extends JFrame {
 		
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setIcon(new ImageIcon("Images\\notebook-336634_640.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\pooja\\workspace_rapidx\\School_Enlightment_System\\Images\\notebook-336634_640_opacity60.jpg"));
 		lblNewLabel.setBounds(-2, -4, 567, 441);
 		contentPane.add(lblNewLabel);
-		
-		password_textField = new JPasswordField();
-		password_textField.setBounds(314, 130, 115, 32);
-		contentPane.add(password_textField);
 	}
 }

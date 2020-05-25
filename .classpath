@@ -16,5 +16,8 @@
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/sa-jdi.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/tools.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/rs2xml.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/javax.activation.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/javax.mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -21,23 +21,22 @@ import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class JFrame_UpdateProfile extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JPasswordField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-
-	/**
-	 * Launch the application.
-	 */
+	private JTextField username_textField;
+	private JPasswordField password_textField;
+	private JTextField loginas_textField;
+	private JTextField first_name_textField;
+	private JTextField last_name_textField;
+	private JTextField email_textField;
+	private JTextField contact_number_textField;
+	private JTextField birthdate_textField;
+	private JTextField address_textField;
+	private JButton update_button;
+	private JButton cancel_button;
 	private String username;
   
     public JFrame_UpdateProfile(String username) {
@@ -48,192 +47,152 @@ public class JFrame_UpdateProfile extends JFrame {
     public String getUsername() {
 		return username;
 	}
-    
-
-	/**
-	 * Create the frame.
-	 */
-	public void initComponents() {
+   
+public void initComponents() {
 		setForeground(new Color(176, 224, 230));
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 664, 407);
+		setBounds(100, 100, 520, 595);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(51, 102, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("User Name");
-		lblNewLabel.setBounds(35, 30, 89, 26);
-		contentPane.add(lblNewLabel);
+		JLabel username_label = new JLabel("User Name");
+		username_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		username_label.setBounds(35, 50, 100, 25);
+		contentPane.add(username_label);
 		
-		JLabel lblNewLabel_1 = new JLabel("Password");
-		lblNewLabel_1.setBounds(35, 65, 89, 26);
-		contentPane.add(lblNewLabel_1);
+		JLabel password_label = new JLabel("Password");
+		password_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		password_label.setBounds(35, 90, 100, 26);
+		contentPane.add(password_label);
 		
-		JLabel lblNewLabel_2 = new JLabel("Login As");
-		lblNewLabel_2.setToolTipText("\r\nEnter TEACHER or STUDENT only.");
-		lblNewLabel_2.setBounds(35, 100, 89, 26);
-		contentPane.add(lblNewLabel_2);
+		JLabel loginas_label = new JLabel("Login As");
+		loginas_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		loginas_label.setToolTipText("\r\nEnter TEACHER or STUDENT only.");
+		loginas_label.setBounds(35, 130, 89, 26);
+		contentPane.add(loginas_label);
 		
-		JLabel lblNewLabel_3 = new JLabel("First Name");
-		lblNewLabel_3.setBounds(35, 135, 89, 26);
-		contentPane.add(lblNewLabel_3);
+		JLabel first_name_label = new JLabel("First Name");
+		first_name_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		first_name_label.setBounds(35, 170, 100, 25);
+		contentPane.add(first_name_label);
 		
-		JLabel lblNewLabel_4 = new JLabel("Last Name");
-		lblNewLabel_4.setBounds(35, 170, 89, 26);
-		contentPane.add(lblNewLabel_4);
+		JLabel last_name_label = new JLabel("Last Name");
+		last_name_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		last_name_label.setBounds(35, 210, 100, 25);
+		contentPane.add(last_name_label);
 		
-		JLabel lblNewLabel_5 = new JLabel("Email");
-		lblNewLabel_5.setBounds(35, 205, 89, 26);
-		contentPane.add(lblNewLabel_5);
+		JLabel email_label = new JLabel("Email");
+		email_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		email_label.setBounds(35, 250, 100, 25);
+		contentPane.add(email_label);
 		
-		JLabel lblNewLabel_6 = new JLabel("Contact Number");
-		lblNewLabel_6.setBounds(35, 240, 89, 26);
-		contentPane.add(lblNewLabel_6);
+		JLabel contact_number_label = new JLabel("Contact Number");
+		contact_number_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		contact_number_label.setBounds(35, 290, 130, 25);
+		contentPane.add(contact_number_label);
 		
-		JLabel lblNewLabel_7 = new JLabel("Birthdate");
-		lblNewLabel_7.setBounds(35, 275, 89, 26);
-		contentPane.add(lblNewLabel_7);
+		JLabel birthdate_label = new JLabel("Birthdate");
+		birthdate_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		birthdate_label.setBounds(35, 330, 100, 25);
+		contentPane.add(birthdate_label);
 		
-		JLabel lblNewLabel_8 = new JLabel("Address");
-		lblNewLabel_8.setBounds(35, 310, 89, 26);
-		contentPane.add(lblNewLabel_8);
+		JLabel address_label = new JLabel("Address");
+		address_label.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		address_label.setBounds(35, 370, 100, 25);
+		contentPane.add(address_label);
 		
-		textField = new JTextField();
-		textField.setBounds(153, 30, 117, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		username_textField = new JTextField();
+		username_textField.setBounds(175, 50, 200, 25);
+		contentPane.add(username_textField);
+		username_textField.setColumns(10);
 		
-		textField_1 = new JPasswordField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(153, 65, 117, 20);
-		contentPane.add(textField_1);
+		password_textField = new JPasswordField();
+		password_textField.setColumns(10);
+		password_textField.setBounds(175, 90, 200, 25);
+		contentPane.add(password_textField);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(153, 100, 117, 20);
-		contentPane.add(textField_2);
+		loginas_textField = new JTextField();
+		loginas_textField.setColumns(10);
+		loginas_textField.setBounds(175, 130, 200, 25);
+		contentPane.add(loginas_textField);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(153, 135, 117, 20);
-		contentPane.add(textField_3);
+		first_name_textField = new JTextField();
+		first_name_textField.setColumns(10);
+		first_name_textField.setBounds(175, 170, 200, 25);
+		contentPane.add(first_name_textField);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(153, 170, 117, 20);
-		contentPane.add(textField_4);
+		last_name_textField = new JTextField();
+		last_name_textField.setColumns(10);
+		last_name_textField.setBounds(175, 210, 200, 25);
+		contentPane.add(last_name_textField);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(153, 205, 117, 20);
-		contentPane.add(textField_5);
+		email_textField = new JTextField();
+		email_textField.setColumns(10);
+		email_textField.setBounds(175, 250, 200, 25);
+		contentPane.add(email_textField);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(153, 240, 117, 20);
-		contentPane.add(textField_6);
+		contact_number_textField = new JTextField();
+		contact_number_textField.setColumns(10);
+		contact_number_textField.setBounds(175, 290, 200, 25);
+		contentPane.add(contact_number_textField);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(153, 275, 117, 20);
-		contentPane.add(textField_7);
+		birthdate_textField = new JTextField();
+		birthdate_textField.setColumns(10);
+		birthdate_textField.setBounds(175, 330, 200, 25);
+		contentPane.add(birthdate_textField);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(153, 310, 117, 20);
-		contentPane.add(textField_8);
+		address_textField = new JTextField();
+		address_textField.setColumns(10);
+		address_textField.setBounds(175, 370, 200, 100);
+		contentPane.add(address_textField);
 		
-		JButton btnNewButton = new JButton("UPDATE");
-		btnNewButton.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
-			public void actionPerformed(ActionEvent arg0) {
-				try {  
-			       // Class.forName("com.mysql.jdbc.Driver");  
-			        // establish connection  
-			        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/client", "root", "");
-					PreparedStatement pst = (PreparedStatement) con.prepareStatement("UPDATE USER_DATA SET USER_NAME=?,PASSWORD=?, LOGIN_AS=?, FIRST_NAME=?, LAST_NAME=?, EMAIL=?, CONTACT_NUMBER=?, BIRTHDATE=?, ADDRESS=? where user_name=?");
-
-					pst.setString(1, textField.getText());
-					pst.setString(2, textField_1.getText());
-					pst.setString(3, textField_2.getText());
-					pst.setString(4, textField_3.getText());
-					pst.setString(5, textField_4.getText());
-					pst.setString(6, textField_5.getText());
-					pst.setString(7, textField_6.getText());
-					pst.setString(8, textField_7.getText());
-					pst.setString(9, textField_8.getText());
-					pst.setString(10, username);
-					
-					
-					pst.executeUpdate();
-					JOptionPane.showMessageDialog(null, "Record is updated..."); 
-			        con.close();  
-			        initComponents();
-			        //Refresh(); //Calling Referesh() method  
-			    } catch (SQLException se) {  
-			        JOptionPane.showMessageDialog(null, se);  
-			    }  
-			}
-		});
-		btnNewButton.setBounds(460, 97, 128, 42);
-		contentPane.add(btnNewButton);
+		update_button = new JButton("Update");
+		update_button.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		update_button.setBounds(35, 505, 120, 30);
+		contentPane.add(update_button);
 		
-		JButton btnDelete = new JButton("DELETE");
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try {  
-			        Class.forName("com.mysql.jdbc.Driver");  
-			        // establish connection  
-			        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/client", "root", "");
-					PreparedStatement pst = (PreparedStatement) con.prepareStatement("DELETE FROM USER_DATA WHERE USER_NAME=?");
-
-					pst.setString(1, username);
-			
-					int rs=pst.executeUpdate();
-					if(rs == 1) {
-					JOptionPane.showMessageDialog(null, "Profile is deleted..."); 
-					}
-					con.close();  
-			        //Refresh(); //Calling Referesh() method  
-			    } catch (SQLException | ClassNotFoundException se) {  
-			        JOptionPane.showMessageDialog(null, se);  
-			    } 
-			}
-		});
-		btnDelete.setToolTipText("\r\nAction can not be undone.");
-		btnDelete.setBounds(460, 207, 128, 42);
-		contentPane.add(btnDelete);
 		
-		 try {  
+		JLabel update_profile_label = new JLabel("Profile Updation");
+		update_profile_label.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
+		update_profile_label.setBounds(137, 7, 160, 30);
+		contentPane.add(update_profile_label);
+		
+		cancel_button = new JButton("Cancel");
+		cancel_button.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		cancel_button.setBounds(255, 505, 120, 30);
+		contentPane.add(cancel_button);
+}	
+public void writeData() {
+	try {  
 		        //Class.forName("com.mysql.jdbc.Driver");  
 		        // establish connection  
 		        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/client", "root", "");
 		        PreparedStatement pst = (PreparedStatement) con.prepareStatement("Select USER_NAME, PASSWORD, LOGIN_AS, FIRST_NAME, LAST_NAME, EMAIL, CONTACT_NUMBER, BIRTHDATE, ADDRESS from user_data where user_name=?");
 
-				pst.setString(1, username);  
-				
+				pst.setString(1, username);
 				ResultSet rs=pst.executeQuery();
-				
 				if(rs.next()) { 
 			        String ID = rs.getString("USER_NAME");
-			        textField.setText(ID);
+			        username_textField.setText(ID);
 			        String PS = rs.getString("PASSWORD");
-			        textField_1.setText(PS);
+			        password_textField.setText(PS);
 			        String LA = rs.getString("LOGIN_AS");
-			        textField_2.setText(LA);
+			        loginas_textField.setText(LA);
 			        String FN = rs.getString("FIRST_NAME");
-			        textField_3.setText(FN);
+			        first_name_textField.setText(FN);
 			        String LN = rs.getString("LAST_NAME");
-			        textField_4.setText(LN);
+			        last_name_textField.setText(LN);
 			        String EM = rs.getString("EMAIL");
-			        textField_5.setText(EM);
+			        email_textField.setText(EM);
 			        String CN = rs.getString("CONTACT_NUMBER");
-			        textField_6.setText(CN);
+			        contact_number_textField.setText(CN);
 			        String BD = rs.getString("BIRTHDATE");
-			        textField_7.setText(BD);
+			        birthdate_textField.setText(BD);
 			        String AD = rs.getString("ADDRESS");
-			        textField_8.setText(AD);
+			        address_textField.setText(AD);
 			        
 			       
 			     
@@ -244,4 +203,46 @@ public class JFrame_UpdateProfile extends JFrame {
 		        JOptionPane.showMessageDialog(null, e);  
 		    }  
 	}
+public void updateData() {
+	update_button.addActionListener(new ActionListener() {
+		@SuppressWarnings("deprecation")
+		public void actionPerformed(ActionEvent arg0) {
+			try {  
+		       // Class.forName("com.mysql.jdbc.Driver");  
+		        // establish connection  
+		        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/client", "root", "");
+				PreparedStatement pst = (PreparedStatement) con.prepareStatement("UPDATE USER_DATA SET USER_NAME=?,PASSWORD=?, LOGIN_AS=?, FIRST_NAME=?, LAST_NAME=?, EMAIL=?, CONTACT_NUMBER=?, BIRTHDATE=?, ADDRESS=? where user_name=?");
+
+				pst.setString(1, username_textField.getText());
+				pst.setString(2, password_textField.getText());
+				pst.setString(3, loginas_textField.getText());
+				pst.setString(4, first_name_textField.getText());
+				pst.setString(5, last_name_textField.getText());
+				pst.setString(6, email_textField.getText());
+				pst.setString(7, contact_number_textField.getText());
+				pst.setString(8, birthdate_textField.getText());
+				pst.setString(9, address_textField.getText());
+				pst.setString(10, username);
+				
+				
+				pst.executeUpdate();
+				JOptionPane.showMessageDialog(null, "Record is updated..."); 
+		        con.close();  
+		        initComponents();
+		        //Refresh(); //Calling Referesh() method  
+		    } catch (SQLException se) {  
+		        JOptionPane.showMessageDialog(null, se);  
+		    }  
+		}
+	});
+	
+	cancel_button.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			System.exit(0);
+			
+		}
+	});
+	
+	
+}
 }

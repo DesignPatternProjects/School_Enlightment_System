@@ -1,4 +1,6 @@
 package src;
+import javax.swing.JFileChooser;
+import java.io.File;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,6 +8,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JLabel;
@@ -17,12 +20,15 @@ import java.awt.event.ActionEvent;
 import java.awt.Dimension;
 import javax.swing.JMenuItem;
 import java.awt.Component;
+import javax.swing.JMenu;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class JFrame_Student_Settings extends JFrame {
 
 	private JPanel contentPane;
 	private String username;
-
+	private static JTextArea jTextArea;
 	
 
 public JFrame_Student_Settings(String username) {
@@ -50,38 +56,90 @@ public void initComponents() {
 	JMenuBar menuBar = new JMenuBar();
 	setJMenuBar(menuBar);
 	
-	JMenuItem mntmNewMenuItem = new JMenuItem("Password_Change");
-	mntmNewMenuItem.setAlignmentX(Component.LEFT_ALIGNMENT);
-	mntmNewMenuItem.setPreferredSize(new Dimension(230, 24));
-	menuBar.add(mntmNewMenuItem);
+	JMenu menu_password_settings = new JMenu("Password Settings");
+	menuBar.add(menu_password_settings);
 	
-	JMenuItem mntmNewMenuItem_1 = new JMenuItem("Help");
-	menuBar.add(mntmNewMenuItem_1);
+	JMenuItem menu_item_changepassword = new JMenuItem("Change Password");
+	menu_item_changepassword.addMouseListener(new MouseAdapter() {
+		
+		@Override
+		public void mousePressed(MouseEvent e) {
+			JFrame_ChangePassword pwd=new JFrame_ChangePassword(username);
+			pwd.setVisible(true);
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			setColor(menu_item_changepassword);
+		}
+		@Override
+		public void mouseExited(MouseEvent e) {
+			resetColor(menu_item_changepassword);
+		}
+	});
+	menu_password_settings.add(menu_item_changepassword);
 	
-	JMenuItem mntmNewMenuItem_2 = new JMenuItem("About");
-	menuBar.add(mntmNewMenuItem_2);
+	JMenu menu_profile_settings = new JMenu("Profile Settings");
+	menuBar.add(menu_profile_settings);
 	
-	JMenuItem mntmNewMenuItem_3 = new JMenuItem("Notifications");
-	menuBar.add(mntmNewMenuItem_3);
+	JMenuItem menu_item_delete_profile = new JMenuItem("Delete Profile");
+	menu_profile_settings.add(menu_item_delete_profile);
+	menu_item_delete_profile.addMouseListener(new MouseAdapter() {
+		
+		@Override
+		public void mousePressed(MouseEvent e) {
+			JFrame_Delete_Profile delete_frame = new JFrame_Delete_Profile(username);
+			delete_frame.deleteData();
+			delete_frame.setVisible(true);
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			setColor(menu_item_changepassword);
+		}
+		@Override
+		public void mouseExited(MouseEvent e) {
+			resetColor(menu_item_changepassword);
+		}
+	});
+	
+	JMenu menu_help = new JMenu("Help");
+	
+	//jTextArea=new JTextArea();
+	/*menu_help.addMouseListener(new MouseAdapter() {
+		@Override
+		public void mousePressed(java.awt.event.MouseEvent evt) {
+			JFrame_FileOpener my_file_object = new JFrame_FileOpener();
+			
+			//frame.setSize(1000, 1000);
+			//FileOpenerClass my_file_object=new FileOpenerClass();
+			try {
+				my_file_object.pick_me();
+				my_file_object.setVisible(true);
+
+			}
+			catch(Exception e) {
+				e.printStackTrace();				
+			}
+			jTextArea.setText(my_file_object.sb.toString()); 
+			
+		}
+	});*/
+	menuBar.add(menu_help);
+	
+	JMenu menu_conact_us = new JMenu("Contact Us");
+	menuBar.add(menu_conact_us);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	setContentPane(contentPane);
 	contentPane.setLayout(null);
 	
-	
-	
-	JButton btnNewButton = new JButton("Change Password");
-	btnNewButton.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-	btnNewButton.setForeground(new Color(0, 0, 255));
-	btnNewButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent arg0) {
-			ChangePassword pwd=new ChangePassword(username);
-			pwd.setVisible(true);
-		}
-	});
-	btnNewButton.setBounds(46, 38, 170, 35);
-	contentPane.add(btnNewButton);
-	
-	
 }
+	
+	public void setColor(JMenuItem menuitem) {
+		menuitem.setBackground(new java.awt.Color(197,197,197));
+	}
+	public void resetColor(JMenuItem menuitem) {
+		menuitem.setBackground(new java.awt.Color(240,240,240));
+	}
+	
+
 }

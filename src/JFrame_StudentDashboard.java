@@ -3,7 +3,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Component;
@@ -12,12 +11,12 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Color;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
+import java.awt.SystemColor;
+
 
 public class JFrame_StudentDashboard extends JFrame {
 
@@ -82,23 +81,23 @@ public void initComponents() {
 		        courses_jLabel_img.setIcon(new ImageIcon("Images\\icons8-books-96.png"));
 		        grades_jPanel = new javax.swing.JPanel();
 		        grades_jLabel_img = new javax.swing.JLabel();
-		        grades_jLabel_img.setIcon(new ImageIcon("Images\\icons8-grades-96.png"));
+		        grades_jLabel_img.setIcon(new ImageIcon("Images\\icons8-planner-96.png"));
 		        settings_jPanel = new javax.swing.JPanel();
 		        settings_jPanel.setForeground(new Color(0, 0, 0));
 		        settings_jLabel_img = new javax.swing.JLabel();
 		        settings_jLabel_img.setIcon(new ImageIcon("Images\\icons8-briefcase-settings-96.png"));
 		        Finacial_accnt_jPanel = new javax.swing.JPanel();
 		        financial_accnt_jLabel_img = new javax.swing.JLabel();
-		        financial_accnt_jLabel_img.setIcon(new ImageIcon("Images\\icons8-financial-tasks-96.png"));
+		        financial_accnt_jLabel_img.setIcon(new ImageIcon("Images\\icons8-email-open-96.png"));
 
 		        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		        setLocationByPlatform(true);
 		        setUndecorated(true);
-		        setPreferredSize(new java.awt.Dimension(860, 650));
+		        setPreferredSize(new java.awt.Dimension(800, 650));
 
-		        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-		        jPanel1.setMinimumSize(new java.awt.Dimension(860, 600));
-		        jPanel1.setPreferredSize(new java.awt.Dimension(854, 600));
+		        jPanel1.setBackground(new Color(255, 255, 255));
+		        jPanel1.setMinimumSize(new java.awt.Dimension(800, 600));
+		        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
 		        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
 		        jPanel2.setBackground(new Color(51, 102, 204));
@@ -114,12 +113,12 @@ public void initComponents() {
 		        });
 		        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-		        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-		        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-		        jLabel13.setText("Dashboard");
-		        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+		        jLabel13.setFont(new Font("Comic Sans MS", Font.BOLD, 20)); // NOI18N
+		        jLabel13.setForeground(SystemColor.desktop);
+		        jLabel13.setText("Welcome to Dashboard");
+		        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
 
-		        exit.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+		        exit.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
 		        exit.setForeground(new java.awt.Color(255, 255, 255));
 		        exit.setText("X");
 		        exit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -127,28 +126,30 @@ public void initComponents() {
 		                exitMousePressed(evt);
 		            }
 		        });
-		        jPanel2.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(838, 0, 22, -1));
+		        jPanel2.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, 22, -1));
 
-		        jLabel15.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-		        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-		        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
+		        jLabel15.setFont(new java.awt.Font("Comic Sans MS", Font.BOLD, 20)); // NOI18N
+		        jLabel15.setForeground(SystemColor.desktop);
+		        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 80, -1, -1));
 
 		        jTextField1.setBackground(new java.awt.Color(45, 118, 232));
 		        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 		        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
 		        jTextField1.setBorder(null);
-		        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 334, 25));
-		        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 348, -1));
+		        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 340, 25));
+		        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 340, -1));
+		        
+		       // jPanel2.add(lblTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, 100, 30));
 
-		        jLabel14.setIcon(new javax.swing.ImageIcon("Images\\navigation.png")); // NOI18N
-		        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 90, 100));
+		        jLabel14.setIcon(new ImageIcon("Images\\student_graduate.jpg")); // NOI18N
+		        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 300));
 
 		        jLabel16.setIcon(new javax.swing.ImageIcon("Images\\search_20px_1.png")); // NOI18N
-		        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+		        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 150, -1, -1));
 
-		        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 240));
+		        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 300));
 
-		        notifications_jPanel.setBackground(new Color(51, 102, 204));
+		        notifications_jPanel.setBackground(new Color(255, 127, 80));
 		        notifications_jPanel.addMouseListener(new java.awt.event.MouseAdapter() {
 		            public void mouseEntered(java.awt.event.MouseEvent evt) {
 		                jPanel3MouseEntered(evt);
@@ -165,24 +166,28 @@ public void initComponents() {
 		        notifications_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        notifications_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
 		        
-		        notifications_jlabel = new JLabel("Notifications");
-		        notifications_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		        library_jlabel = new JLabel("Library");
+		        library_jlabel.setAlignmentY(Component.TOP_ALIGNMENT);
+		        library_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 
 		        javax.swing.GroupLayout gl_notifications_jPanel = new javax.swing.GroupLayout(notifications_jPanel);
 		        gl_notifications_jPanel.setHorizontalGroup(
 		        	gl_notifications_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_notifications_jPanel.createSequentialGroup()
-		        			.addGap(19)
 		        			.addGroup(gl_notifications_jPanel.createParallelGroup(Alignment.TRAILING)
-		        				.addComponent(notifications_jLabel_img, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-		        				.addComponent(notifications_jlabel))
+		        				.addGroup(gl_notifications_jPanel.createSequentialGroup()
+		        					.addContainerGap()
+		        					.addComponent(library_jlabel, GroupLayout.PREFERRED_SIZE, 76, GroupLayout.PREFERRED_SIZE))
+		        				.addGroup(Alignment.LEADING, gl_notifications_jPanel.createSequentialGroup()
+		        					.addGap(19)
+		        					.addComponent(notifications_jLabel_img, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)))
 		        			.addContainerGap(19, Short.MAX_VALUE))
 		        );
 		        gl_notifications_jPanel.setVerticalGroup(
 		        	gl_notifications_jPanel.createParallelGroup(Alignment.LEADING)
-		        		.addGroup(gl_notifications_jPanel.createSequentialGroup()
-		        			.addComponent(notifications_jlabel)
-		        			.addPreferredGap(ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+		        		.addGroup(Alignment.TRAILING, gl_notifications_jPanel.createSequentialGroup()
+		        			.addComponent(library_jlabel)
+		        			.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 		        			.addComponent(notifications_jLabel_img, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
 		        			.addGap(8))
 		        );
@@ -190,7 +195,7 @@ public void initComponents() {
 
 		        jPanel1.add(notifications_jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 140, 120));
 
-		        home_jPanel.setBackground(new Color(51, 102, 204));
+		        home_jPanel.setBackground(new Color(204, 51, 102));
 		        home_jPanel.addMouseListener(new java.awt.event.MouseAdapter() {
 		            public void mouseEntered(java.awt.event.MouseEvent evt) {
 		                jPanel4MouseEntered(evt);
@@ -235,7 +240,7 @@ public void initComponents() {
 
 		        jPanel1.add(home_jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 140, 120));
 
-		        course_jPanel5.setBackground(new Color(51, 102, 204));
+		        course_jPanel5.setBackground(new Color(204, 204, 51));
 		        course_jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
 		            public void mouseEntered(java.awt.event.MouseEvent evt) {
 		                jPanel5MouseEntered(evt);
@@ -283,7 +288,7 @@ public void initComponents() {
 
 		        jPanel1.add(course_jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 140, 120));
 
-		        grades_jPanel.setBackground(new Color(51, 102, 204));
+		        grades_jPanel.setBackground(new Color(153, 102, 204));
 		        grades_jPanel.addMouseListener(new java.awt.event.MouseAdapter() {
 		            public void mouseEntered(java.awt.event.MouseEvent evt) {
 		                jPanel6MouseEntered(evt);
@@ -300,7 +305,7 @@ public void initComponents() {
 		        grades_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        grades_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
 		        
-		        grades_jlabel = new JLabel("Grades");
+		        grades_jlabel = new JLabel("Calender");
 		        grades_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
 
 		        javax.swing.GroupLayout gl_grades_jPanel = new javax.swing.GroupLayout(grades_jPanel);
@@ -312,22 +317,23 @@ public void initComponents() {
 		        					.addGap(38)
 		        					.addComponent(grades_jlabel))
 		        				.addGroup(gl_grades_jPanel.createSequentialGroup()
-		        					.addGap(23)
+		        					.addGap(22)
 		        					.addComponent(grades_jLabel_img)))
-		        			.addContainerGap(48, Short.MAX_VALUE))
+		        			.addContainerGap(22, Short.MAX_VALUE))
 		        );
 		        gl_grades_jPanel.setVerticalGroup(
 		        	gl_grades_jPanel.createParallelGroup(Alignment.LEADING)
 		        		.addGroup(gl_grades_jPanel.createSequentialGroup()
 		        			.addComponent(grades_jlabel)
-		        			.addGap(13)
-		        			.addComponent(grades_jLabel_img, GroupLayout.PREFERRED_SIZE, 84, Short.MAX_VALUE))
+		        			.addPreferredGap(ComponentPlacement.RELATED)
+		        			.addComponent(grades_jLabel_img, GroupLayout.PREFERRED_SIZE, 84, Short.MAX_VALUE)
+		        			.addContainerGap())
 		        );
 		        grades_jPanel.setLayout(gl_grades_jPanel);
 
 		        jPanel1.add(grades_jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 140, 120));
 
-		        settings_jPanel.setBackground(new Color(51, 102, 204));
+		        settings_jPanel.setBackground(new Color(255, 204, 204));
 		        settings_jPanel.addMouseListener(new java.awt.event.MouseAdapter() {
 		            public void mouseEntered(java.awt.event.MouseEvent evt) {
 		                jPanel7MouseEntered(evt);
@@ -372,7 +378,7 @@ public void initComponents() {
 
 		        jPanel1.add(settings_jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 140, 120));
 
-		        Finacial_accnt_jPanel.setBackground(new Color(51, 102, 204));
+		        Finacial_accnt_jPanel.setBackground(new Color(255, 102, 153));
 		        Finacial_accnt_jPanel.addMouseListener(new java.awt.event.MouseAdapter() {
 		            public void mouseEntered(java.awt.event.MouseEvent evt) {
 		                jPanel8MouseEntered(evt);
@@ -389,43 +395,51 @@ public void initComponents() {
 		        financial_accnt_jLabel_img.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 		        financial_accnt_jLabel_img.setForeground(new java.awt.Color(45, 118, 232));
 		        
-		        financial_account_jlabel = new JLabel("Financial Account");
+		        financial_account_jlabel = new JLabel("Inbox");
 		        financial_account_jlabel.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 
 		        javax.swing.GroupLayout gl_Finacial_accnt_jPanel = new javax.swing.GroupLayout(Finacial_accnt_jPanel);
 		        gl_Finacial_accnt_jPanel.setHorizontalGroup(
 		        	gl_Finacial_accnt_jPanel.createParallelGroup(Alignment.TRAILING)
 		        		.addGroup(gl_Finacial_accnt_jPanel.createSequentialGroup()
-		        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-		        			.addGroup(gl_Finacial_accnt_jPanel.createParallelGroup(Alignment.LEADING)
-		        				.addGroup(gl_Finacial_accnt_jPanel.createSequentialGroup()
-		        					.addGap(10)
-		        					.addComponent(financial_accnt_jLabel_img, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE))
-		        				.addComponent(financial_account_jlabel))
-		        			.addContainerGap())
+		        			.addContainerGap(21, Short.MAX_VALUE)
+		        			.addGroup(gl_Finacial_accnt_jPanel.createParallelGroup(Alignment.TRAILING)
+		        				.addComponent(financial_accnt_jLabel_img, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+		        				.addComponent(financial_account_jlabel, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE))
+		        			.addGap(25))
 		        );
 		        gl_Finacial_accnt_jPanel.setVerticalGroup(
 		        	gl_Finacial_accnt_jPanel.createParallelGroup(Alignment.TRAILING)
-		        		.addGroup(gl_Finacial_accnt_jPanel.createSequentialGroup()
+		        		.addGroup(Alignment.LEADING, gl_Finacial_accnt_jPanel.createSequentialGroup()
 		        			.addComponent(financial_account_jlabel)
-		        			.addPreferredGap(ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+		        			.addPreferredGap(ComponentPlacement.RELATED)
 		        			.addComponent(financial_accnt_jLabel_img, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
-		        			.addGap(39))
+		        			.addContainerGap(39, Short.MAX_VALUE))
 		        );
 		        Finacial_accnt_jPanel.setLayout(gl_Finacial_accnt_jPanel);
-
+		        
 		        jPanel1.add(Finacial_accnt_jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 140, 120));
+		        
+		        JLabel lblNewLabel = new JLabel("New label");
 
 		        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		        getContentPane().setLayout(layout);
 		        layout.setHorizontalGroup(
-		            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-		            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+		        	layout.createParallelGroup(Alignment.LEADING)
+		        		.addGroup(layout.createSequentialGroup()
+		        			.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
+		        			.addPreferredGap(ComponentPlacement.RELATED)
+		        			.addComponent(lblNewLabel)
+		        			.addGap(400))
 		        );
 		        layout.setVerticalGroup(
-		            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-		            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, Short.MAX_VALUE)
+		        	layout.createParallelGroup(Alignment.LEADING)
+		        		.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, 650, Short.MAX_VALUE)
+		        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+		        			.addContainerGap(594, Short.MAX_VALUE)
+		        			.addComponent(lblNewLabel)
+		        			.addGap(40))
 		        );
+		        getContentPane().setLayout(layout);
 
 		        pack();
 		    }// </editor-fold>//GEN-END:initComponents
@@ -518,8 +532,8 @@ public void initComponents() {
 		    }
 
 		    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {
-		       JFrame_Student_Notification notification=new JFrame_Student_Notification(username);
-		    	notification.setVisible(true);
+		       JFrame_Student_Library library=new JFrame_Student_Library(username);
+		    	library.setVisible(true);
 				 //new user_data().show();
 		   }
 		    
@@ -539,8 +553,8 @@ public void initComponents() {
 		   
 		   private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
 		        // TODO add your handling code here:
-		    	JFrame_Student_Grades courses = new JFrame_Student_Grades(username);
-		    	courses.setVisible(true);
+			   JFrame_Student_Calender calender = new JFrame_Student_Calender(username);
+			   calender.setVisible(true);
 		    	 //new user_data().show();
 		   }
 		   
@@ -552,8 +566,8 @@ public void initComponents() {
 		   }
 		   private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {
 		        // TODO add your handling code here:
-		    	JFrame_Student_Finance_Account settings = new JFrame_Student_Finance_Account(username);
-				settings.setVisible(true);
+		    	JFrame_Student_Email email = new JFrame_Student_Email(username);
+				email.setVisible(true);
 		    	
 		   }
 		    
@@ -596,5 +610,13 @@ public void initComponents() {
 		    private JLabel courses_jlabel;
 		    private JLabel financial_account_jlabel;
 		    private JLabel grades_jlabel;
-		    private JLabel notifications_jlabel;
+		    private JLabel library_jlabel;
+		     
+		    
+		
+		    
+		   
 }
+
+
+
