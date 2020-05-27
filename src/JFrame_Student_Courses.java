@@ -12,15 +12,17 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Component;
 
 public class JFrame_Student_Courses extends JFrame {
 
 	private JPanel contentPane;
 	private String username;
-	private javax.swing.JPanel maths_jpanel;
+	private javax.swing.JPanel maths_jpanel, science_jpanel,history_jpanel;
+	private String subjects;
 
 public JFrame_Student_Courses(String username) {
-	setTitle("Settings");
+	setTitle("Courses");
 	this.username=username;
    	initComponents();
 	}
@@ -82,7 +84,7 @@ private void initComponents() {
 		
 		JLabel lblNewLabel_1 = new JLabel("Maths");
 		lblNewLabel_1.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(22, 0, 56, 16);
+		lblNewLabel_1.setBounds(22, 0, 56, 22);
 		maths_jpanel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
@@ -90,13 +92,62 @@ private void initComponents() {
 		lblNewLabel_2.setBounds(2, 29, 87, 60);
 		maths_jpanel.add(lblNewLabel_2);
 		
-		JPanel english_jpanel = new JPanel();
-		english_jpanel.setBounds(250, 60, 100, 100);
-		contentPane.add(english_jpanel);
-		
-		JPanel science_jpanel = new JPanel();
-		science_jpanel.setBounds(400, 60, 100, 100);
+		science_jpanel = new JPanel();
+		science_jpanel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(java.awt.event.MouseEvent evt) {
+				jPanel2MouseClicked(evt);
+			}
+
+			@Override
+			public void mouseEntered(java.awt.event.MouseEvent evt) {
+				jPanel2MouseEntered(evt);
+			}
+			
+
+			@Override
+			public void mouseExited(java.awt.event.MouseEvent evt) {
+				jPanel2MouseExited(evt);
+			}
+		});
+		science_jpanel.setBackground(new Color(51, 102, 204));
+		science_jpanel.setBounds(250, 60, 100, 100);
 		contentPane.add(science_jpanel);
+		science_jpanel.setLayout(null);
+		
+		JLabel lblNewLabel_3 = new JLabel("Science");
+		lblNewLabel_3.setAlignmentY(Component.TOP_ALIGNMENT);
+		lblNewLabel_3.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		lblNewLabel_3.setBounds(21, 0, 57, 22);
+		science_jpanel.add(lblNewLabel_3);
+		
+		history_jpanel = new JPanel();
+		history_jpanel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(java.awt.event.MouseEvent evt) {
+				jPanel3MouseClicked(evt);
+			}
+
+			@Override
+			public void mouseEntered(java.awt.event.MouseEvent evt) {
+				jPanel3MouseEntered(evt);
+			}
+			
+
+			@Override
+			public void mouseExited(java.awt.event.MouseEvent evt) {
+				jPanel3MouseExited(evt);
+			}
+		});
+		history_jpanel.setBackground(new Color(51, 102, 204));
+		history_jpanel.setBounds(400, 60, 100, 100);
+		contentPane.add(history_jpanel);
+		history_jpanel.setLayout(null);
+		
+		JLabel lblNewLabel_4 = new JLabel("History");
+		lblNewLabel_4.setBounds(21, 0, 57, 22);
+		lblNewLabel_4.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
+		history_jpanel.add(lblNewLabel_4);
 		
 		JLabel electives_jlabel = new JLabel("Electives -");
 		electives_jlabel.setForeground(new Color(51, 102, 204));
@@ -139,10 +190,38 @@ private void jPanel1MouseExited(java.awt.event.MouseEvent evt) {
 	
 }	
 private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {
-	JFrame_Student_Courses_Math courses = new JFrame_Student_Courses_Math(username);
+	JFrame_Student_Courses_SubCourses courses = new JFrame_Student_Courses_SubCourses(username);
 	courses.setVisible(true);
 			
 }
-		
+private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {
+	// TODO Auto-generated method stub
+	setColor(science_jpanel);
 	
+}
+private void jPanel2MouseExited(java.awt.event.MouseEvent evt) {
+	// TODO Auto-generated method stub
+	resetColor(science_jpanel);
+	
+}	
+private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {
+	JFrame_Student_Courses_SubCourses courses = new JFrame_Student_Courses_SubCourses(username);
+	courses.setVisible(true);
+			
+}
+private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {
+	// TODO Auto-generated method stub
+	setColor(history_jpanel);
+	
+}
+private void jPanel3MouseExited(java.awt.event.MouseEvent evt) {
+	// TODO Auto-generated method stub
+	resetColor(history_jpanel);
+	
+}	
+private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {
+	JFrame_Student_Courses_SubCourses courses = new JFrame_Student_Courses_SubCourses(username);
+	courses.setVisible(true);
+			
+}
 }

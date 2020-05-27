@@ -201,7 +201,7 @@ public class JFrame_LoginForm extends JFrame {
 		
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\pooja\\workspace_rapidx\\School_Enlightment_System\\Images\\notebook-336634_640_opacity60.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("Images\\notebook-336634_640_opacity60.jpg"));
 		lblNewLabel.setBounds(-2, -4, 567, 441);
 		contentPane.add(lblNewLabel);
 	}
